@@ -171,6 +171,13 @@ void HttpServerConnection::ProcessMessageAsync(HttpRequest& request)
 
 	HttpResponse response(m_Stream, request);
 
+	response.AddHeader("Access-Control-Allow-Credentials", "true");
+
+	String headerAllowOrigin = ApiListener::GetInstance()->GetHeaderAllowOrigin();
+
+	if (!headerAllowOrigin.IsEmpty())
+		response.AddHeader("Access-Control-Allow-Origin", headerAllowOrigin);
+
 	String accept_header = request.Headers->Get("accept");
 
 	if (request.RequestMethod != "GET" && accept_header != "application/json") {

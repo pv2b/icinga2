@@ -52,6 +52,7 @@ Configuration Attributes:
   accept\_commands          |**Optional.** Accept remote commands. Defaults to `false`.
   cipher\_list		    |**Optional.** Cipher list that is allowed.
   tls\_protocolmin          |**Optional.** Minimum TLS protocol version. Must be one of `TLSv1`, `TLSv1.1` or `TLSv1.2`. Defaults to `TLSv1`.
+  header\_allow\_origin     |**Optional.** Specifies a origin URI that may access the API. [Access-Control-Allow-Origin (MDN docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin)
 
 ## ApiUser <a id="objecttype-apiuser"></a>
 
